@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allocate Room</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="second">
+            <div class="img-div">
+              <img class="logo" src="{% static 'img/logo one.jpeg' %}" alt="logo">
+            </div>
+            <h1 class="login-h">BOOK ROOM</h1>
+        </div>
+        {% for hostel, bed_spaces in available_spaces %}
+            <h3 class="male">{{ hostel }}</h3>
+            {% if bed_spaces %}
+                <p>Available Bed spaces:</p>
+                <select name="{{ hostel }}" id="{{ hostel }}" onchange="onBedSpaceChange('{{ hostel }}')">
+                    <option value="">Select-an-option</option>
+                    {% for space in bed_spaces %}
+                    <option class="options" value="{{ space.id }}">{{ space }}</option>
+                    {% endfor %}
+                </select>
+            {% else %}
+            <p>No slot available</p>
+            {% endif %}
+            <br>
+        {% endfor %}
+        <input type="hidden" name="hostel-name" id="hostel-name">
+        <input type="hidden" name="space" id="hostel-space">
+        <button class="book">Book bed space</button>
+    </form>
+    <script>
+        function selection(e){
+            e.prevent
+        }
+        function onBedSpaceChange(e) {
+            var selectedValue = document.getElementById(e).value;
+            document.getElementById("hostel-name").value = e
+            document.getElementById("hostel-space").value = selectedValue
+        }
+    </script>
+</body>
+</html>

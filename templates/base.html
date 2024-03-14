@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{%  endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+  <!-- creating the nav bar and the nav menu -->
+<header class="head">
+  <nav class="navigation">
+    <div class="left-nav">
+      <a href="/"><img class="logo" src="{% static 'img/logo one.jpeg' %}" alt="logo"></a>
+    </div>
+
+    <div class="middle-nav">
+      <ul class="nav-options" id="nav-list">
+        <li class="option1"> <a href="/">Home</a></li>
+        <li class="option2"> <a href="#about-us">About us </a></li>
+        <li class="option3"> <a href="#hostel-rules">Hostel rules</a></li>
+        <li class="option4"> <a href="#contact">Contact Us</a></li>
+        <li class="option5"> <a href="{% url 'account_login' %}">Login</a></li>
+        <li class="option6"> <a href="{% url 'account_signup' %}">sign up</a></li>
+      </ul>
+    </div>
+
+    <div class=right-nav>
+      <a href="{% url 'account_login' %}"><button class="login">Login</button></a>
+      <a href="{% url 'account_signup' %}"><button class="signup">Sign up</button></a>
+    </div>
+    <div class="hamburger">
+      <img id="menu" src="{% static 'img/menu.svg' %}" alt="hamburger menu">
+      <img id="close" src="{% static 'img/close.svg' %}" alt="close menu">
+    </div>
+  </nav>
+</header>
+
+<main>
+  {% block content %}
+  
+  {% endblock %}
+
+</main>
+<footer class="footer">
+  <div class="footer-div">
+    <div class="div-1">
+      <img class="img-foot" src="{% static 'img/logos.png' %}" alt="">
+      <a href="/">Go Home</a>
+    </div>
+    <div class="div-2">
+      <h3 class="c-h">Contact</h3>
+      <a href="adelekeuniversity.edu.com">Adeleke University</a>
+      <a href="mailto:admissions@adelekeuniversity.edu.ng">admissions@adelekeuniversity.edu.ng</a> <br>
+      <a href="tel:09039672814">09039672814</a>
+      <p class="pp-f">Logberin Street Ede Osun State</p>
+    </div>
+    <div class="div-3">
+      <h3 class="c-h">Service</h3>
+      <a href="https://adelekeuniversity.edu.ng/new/how-to-apply/#undergraduate">Under Graduate</a> <br>
+      <a href="https://adelekeuniversity.edu.ng/postgraduates-admission/">Post Graduate</a> <br>
+      <a href="https://adelekeuniversity.edu.ng/new/how-to-apply/#jupeb">Jupeb</a> <br>
+      <a href="https://adelekeuniversity.edu.ng/student-handbook/">Student HandBook</a> <br>
+      <a href="https://adelekeuniversity.edu.ng/au-consult/">Enquiries</a>
+    </div>
+    <div class="div-4">
+      <h3 class="c-h">Media</h3>
+      <div class="div-5">
+        <a href=""><img src="{% static 'img/instagram.svg' %}" alt="instagram"></a>
+        <a href=""><img src="{% static 'img/facebook.svg' %}" alt="facebook"></a>
+        <a href=""><img src="{% static 'img/tiktok-icon.svg' %}" alt="instagram"></a>
+        <a href=""><img src="{% static 'img/twitter.svg' %}" alt="twitter"></a>
+        <a href=""><img src="{% static 'img/youtube-icon.svg' %}" alt="youtube"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

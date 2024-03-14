@@ -1,0 +1,61 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+form{
+  width: 50%;
+  margin: auto;
+  margin-top: 110px;
+}
+
+body{
+  padding: 100px;
+}
+
+.confirm{
+  color: rgb(76, 71, 71);
+  font-size: 40px;
+  text-align: center;
+}
+
+.pp{
+  color: rgb(76, 71, 71);
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+input{
+  height: 40px;
+  width: 120px;
+  border-radius: 10px;
+  border: 1px solid #b9b9b9;
+  text-align: center;
+  text-transform: capitalize;
+
+}
+.submit{
+  height: 40px;
+  width: 120px;
+  margin: auto;
+}
+
+
+@media only screen and (max-width:600px){
+  body{
+    padding: 20px;
+    background-color: #281470;
+  }
+
+  form{
+    width: 100%;
+    margin: 0;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+}

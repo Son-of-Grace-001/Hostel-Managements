@@ -1,0 +1,51 @@
+{% load static %}
+<!-- templates/book_exeat.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bookpass.css' %}">
+    <title>Book Exeat</title>
+</head>
+<body>
+
+<form method="post" action="{% url 'pass' %}">
+    {% csrf_token %}
+
+    <div class="img-div">
+        <img class="logo" src="{% static 'img/logo one.jpeg' %}" alt="logo">
+      </div>
+      <h1 class="login-h">BOOK PASS</h1>
+      <p class="details">Pls fill in the informations correctly</p>
+    </div>
+    <label for="departure_date">Faculty:</label>
+    <input class="date" type="date" name="faculty" value="{{fac}}" disabled>
+    
+    <label for="departure_date">Department:</label>
+    <input class="date" type="date" name="department" value="{{dep}}" disabled>
+
+    <label for="departure_date">Level:</label>
+    <input class="date" type="date" name="level" value="{{levl}}">
+    
+    <label for="return_date">Parent Number:</label>
+    <input type="tel" name="parent_number" required placeholder="Enter your parent number">
+    
+    <label for="departure_date">Student Number:</label>
+    <input class="date" type="date" name="student_number" value="{{student_num}}" disabled>
+    
+    <label for="departure_date">Departure Date:</label>
+    <input class="date" type="date" name="departure_date" required>
+    
+    <label for="return_date">Return Date:</label>
+    <input type="date"  class="date" name="return_date" required>
+    
+    
+    <label for="reason">Reason:</label>
+    <textarea name="reason" required rows="6" col="15" placeholder="Enter the reason for booking pass"></textarea> <br>
+    
+    <button class="submit" type="submit">Submit</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Welcome to Hostel{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <div class="hero-div">
+     
+    </div>
+  </section>
+
+  <section id="about-us">
+    <div class="about">
+      <h1 class="about-h">ABOUT US</h1>
+      <p class="about-t">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequatur voluptates explicabo, excepturi at numquam iste esse nemo quasi id ullam quisquam vel. Dignissimos distinctio sequi accusantium nobis voluptates molestias.
+        Itaque, esse labore laudantium corrupti eligendi saepe odio? Sapiente exercitationem quisquam corporis commodi neque voluptatem earum consequatur. Sint, perferendis ad. Quam, aliquam reprehenderit. Et corrupti natus totam ullam debitis officiis.
+        Laudantium quas doloremque facere id voluptatum, velit reiciendis libero modi explicabo, fugit recusandae maxime, sit iure iusto veniam ducimus voluptate quidem inventore. Vel voluptatum praesentium nam deleniti vero quas impedit.
+        Error quae natus aliquam corrupti placeat saepe minima! Aut iusto debitis iure repellendus quia vero quaerat recusandae dignissimos modi mollitia. Laudantium similique laboriosam inventore perspiciatis saepe nesciunt? Doloribus, omnis adipisci!
+        Amet perspiciatis repellendus laudantium nesciunt! Ipsa consectetur tempore voluptatum maxime in inventore, eius corporis ad sequi veniam ab nam, voluptas officia? Ea aspernatur, hic optio pariatur ut quis inventore nesciunt.
+        Pariatur aliquid reprehenderit quidem qui, iste assumenda, impedit optio labore sequi fuga commodi cum harum libero saepe. Quidem, dignissimos quo. Vero fugit omnis exercitationem minima? Dolores repellat autem reprehenderit? Tenetur.
+        Incidunt fugit totam quidem nulla, eum blanditiis aperiam tempore ullam, sequi quae reprehenderit ea deserunt ut unde? Mollitia molestias facilis saepe impedit suscipit totam inventore ducimus voluptatem, debitis, at eos.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequatur voluptates explicabo, excepturi at numquam iste esse nemo quasi id ullam quisquam vel. Dignissimos distinctio sequi accusantium nobis voluptates molestias.
+        Itaque, esse labore laudantium corrupti eligendi saepe odio? Sapiente exercitationem quisquam corporis commodi neque voluptatem earum consequatur. Sint, perferendis ad. Quam, aliquam reprehenderit.tempore ullam, sequi quae reprehenderit ea deserunt ut unde? Mollitia molestias facilis saepe impedit suscipit totam inventore ducimus voluptatem, debitis, at eos.
+      </p>
+    </div>
+  </section>
+
+  <section id="hostel-rules">
+    <div class="rules">
+      <h1 class="rules-h">HOSTEL RULES</h1>
+      <p class="about-t">
+        Hostels are vibrant spaces that bring together students from 
+        diverse backgrounds and experiences. To ensure a comfortable 
+        and safe living environment for everyone, it's important to 
+        establish clear rules and regulations that promote respect, 
+        responsibility, and community spirit.
+        These guidelines are not simply restrictions; they are the 
+        foundation for a positive and enriching hostel experience. 
+        By adhering to them, we can create a space where everyone feels 
+        welcome, valued, and supported. Some of the rules are:
+      </p>
+      <div class=" grid">
+        <div class="inner">
+          <div class="inner-1">
+            <img class="img-r" src="{% static 'img/stealing.jpg' %}">
+          </div>
+          <div class="inner-2">
+            <h3 class="inner-h">no stealing</h3>
+            <p class="p">
+              Lorem ipsum dolor sit amet consectetur adipisicing 
+              elit. Atque deleniti suscipit, nam molestias nulla
+              quo esse ut quasi consequuntur dolorem aliquam! 
+            </p>
+          </div> 
+        </div>
+        <div class="inner">
+          <div class="inner-1">
+            <img class="img-r" src="{% static 'img/fighting.avif' %}">
+          </div>
+          <div class="inner-2">
+            <h3 class="inner-h">no fighting</h3>
+            <p class="p">
+              Lorem ipsum dolor sit amet consectetur adipisicing 
+              elit. Atque deleniti suscipit, nam molestias nulla
+              quo esse ut quasi consequuntur dolorem aliquam!
+            </p>
+          </div> 
+        </div>
+        <div class="inner">
+          <div class="inner-1">
+            <img class="img-r" src="{% static 'img/bullying.jpg' %}">
+          </div>
+          <div class="inner-2">
+            <h3 class="inner-h">no bullying</h3>
+            <p class="p">
+              Lorem ipsum dolor sit amet consectetur adipisicing 
+              elit. Atque deleniti suscipit, nam molestias nulla
+              quo esse ut quasi consequuntur dolorem aliquam! 
+            </p>
+          </div> 
+        </div>
+        <div class="inner">
+          <div class="inner-1">
+            <img class="img-r" src="{% static 'img/protest.jpg' %}" alt="no protesting image">
+          </div>
+          <div class="inner-2">
+            <h3 class="inner-h">no protesting</h3>
+            <p class="p">
+              Lorem ipsum dolor sit amet consectetur adipisicing 
+              elit. Atque deleniti suscipit, nam molestias nulla
+              quo esse ut quasi consequuntur dolorem aliquam! 
+            </p>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact">
+    <div class="contact-div">
+      <h1 class="contact-h">CONTACT US</h1>
+      <p class="pp">
+        Please supply all the required informations correctly 
+      </p>
+
+      <form method="POST">
+        <div class="fname-grid">
+          <div>
+            <label class="namef" for="fname">First Name</label> <br>
+            <input class="fname" type="text" name="fname" placeholder="Enter your first name">
+          </div>
+          <div>
+            <label class="namel" for="lname">Last Name</label><br>
+            <input class="lname" type="text" name="lname" placeholder="Enter your last name">
+          </div>
+        </div>
+        <label class="lemail" for="email">Email</label> <br>
+        <input name="email" class="email" type="text" placeholder="Enter your email"> <br>
+        <textarea name="message" id="message" cols="30" rows="15">Enter your message</textarea> <br>
+        <input class="submit" type="submit">
+      </form>
+    </div>
+  </section>
+
+{% endblock %}

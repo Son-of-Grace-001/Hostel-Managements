@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Email</title>
+  <link rel="stylesheet" href="{% static 'css/confirm.css' %}">
+</head>
+<body>
+
+  <form method="post" action="">
+
+    
+    {% if form.non_field_errors %}
+      <div class="alert alert-danger">
+          {% for error in form.non_field_errors %}
+              {{ error }}
+          {% endfor %}
+      </div>
+   {% endif %}
+
+    {% csrf_token %}
+
+    <h1 class="confirm">Confirm Your Email</h1>
+    <p class="pp">Pls confirm that the email belongs to you by clicking on the confirm button below </p>
+    {{form.as_p}}
+    <div class="submit">
+      <input type="submit" value="confirm" value="confirm">
+    </div>
+  </form>
+</body>
+</html>

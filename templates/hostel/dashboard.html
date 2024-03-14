@@ -1,0 +1,124 @@
+{% extends 'base2.html' %}
+{% load static %}
+
+{% block title %}Dashbord{% endblock %}
+
+{% block content %}
+<div class="welcome">
+  {% if user.is_authenticated %}
+  <h2 class="welcome-h">Welcome @ {{user.first_name}}  {{user.last_name}}</h2>
+  {% endif %}
+</div>
+<div class="hero-dash">
+  
+</div>
+<div clss="explore">
+  <h1 class=" our-hostel">
+    explore our available hostel/room
+  </h1>
+  <div class="grid">
+    <div class="grid-explore">
+      <img src="{% static 'img/login.jpg' %}" alt="hostel image">
+    </div>
+    <div class="grid-explore">
+      <img src="{% static 'img/login.jpg' %}" alt="hostel image">
+    </div>
+    <div class="grid-explore">
+      <img src="{% static 'img/background.jpg' %}" alt="hostel image">
+    </div>
+    <div class="grid-explore">
+      <img src="{% static 'img/background.jpg' %}" alt="hostel image">
+    </div>
+    <div class="grid-explore">
+      <img src="{% static 'img/login.jpg' %}" alt="hostel image">
+    </div>
+    <div class="grid-explore">
+      <img src="{% static 'img/login.jpg' %}" alt="hostel image">
+    </div>
+    <div class="grid-explore">
+      <img src="{% static 'img/background.jpg' %}" alt="hostel image">
+    </div>
+    <div class="grid-explore">
+      <img src="{% static 'img/background.jpg' %}" alt="hostel image">
+    </div>
+  </div>
+
+  <h1 class=" our-hos">
+    WHY CHOOSE ADELEKE UNIVERSITY HOSTEL?
+  </h1>
+  <div class="grid">
+    <div class="grid-explore">
+      <h3>power supply</h3>
+      <p class="headings">
+        Lorem ipsum dolor, 
+        sit amet consectetur 
+        adipisicing elit. Incidunt 
+        earum, quia nesciunt.
+      </p>
+    </div>
+    <div class="grid-explore">
+      <h3>relationship</h3>
+      <p class="headings">
+        Lorem ipsum dolor, 
+        sit amet consectetur 
+        adipisicing elit. Incidunt 
+        earum, quia nesciunt.
+      </p>
+    </div>
+    <div class="grid-explore">
+      <h3>security</h3>
+      <p class="headings">
+        Lorem ipsum dolor, 
+        sit amet consectetur 
+        adipisicing elit. Incidunt 
+        earum, quia nesciunt.
+      </p>
+    </div>
+    <div class="grid-explore">
+      <h3>Amenities</h3>
+      <p class="headings">
+        Lorem ipsum dolor, 
+        sit amet consectetur 
+        adipisicing elit. Incidunt 
+        earum, quia nesciunt.
+      </p>
+    </div>
+    <div class="grid-explore">
+      <h3>power supply</h3>
+      <p class="headings">
+        Lorem ipsum dolor, 
+        sit amet consectetur 
+        adipisicing elit. Incidunt 
+        earum, quia nesciunt.
+      </p>
+    </div>
+    <div class="grid-explore">
+      <h3>relationship</h3>
+      <p class="headings">
+        Lorem ipsum dolor, 
+        sit amet consectetur 
+        adipisicing elit. Incidunt 
+        earum, quia nesciunt.
+      </p>
+    </div>
+    <div class="grid-explore">
+      <h3>security</h3>
+      <p class="headings">
+        Lorem ipsum dolor, 
+        sit amet consectetur 
+        adipisicing elit. Incidunt 
+        earum, quia nesciunt.
+      </p>
+    </div>
+    <div class="grid-explore">
+      <h3>Amenities</h3>
+      <p class="headings">
+        Lorem ipsum dolor, 
+        sit amet consectetur 
+        adipisicing elit. Incidunt 
+        earum, quia nesciunt.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+form{
+  width: 40%;
+  margin: auto;
+  margin-top: 150px;
+}
+
+body{
+  padding: 100px;
+}
+
+.confirm{
+  text-align: center;
+  color: rgb(76, 71, 71);
+  font-size: 40px;
+}
+
+.pp{
+  color: rgb(76, 71, 71);
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+input{
+  height: 40px;
+  width: 120px;
+  border-radius: 10px;
+  border: 1px solid #b9b9b9;
+  text-align: center;
+  text-transform: capitalize;
+
+}
+
+.submit{
+  height: 40px;
+  width: 120px;
+  margin: auto;
+}
+
+@media only screen and (max-width:600px){
+  body{
+    padding: 20px;
+    background-color: #281470;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height:100vh;
+
+  }
+
+  form{
+    width:100%;
+    margin:0;
+    background-color:#fff;
+    padding:20px;
+  }
+
+  input{
+    height: 40px;
+    width: 120px;
+    border-radius: 10px;
+    border: 1px solid #281470;
+    background-color: #281470;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+  
+  }
+
+  .Verify{
+    margin-top: 15px;
+  }
+
+  .text{
+    margin-bottom: 15px;
+  }
+}

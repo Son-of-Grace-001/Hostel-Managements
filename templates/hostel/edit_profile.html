@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Profile</title>
+  <link rel="stylesheet" href="{% static 'css/edit_profile.css' %}">
+</head>
+<body>
+  <form method="post" action="{% url 'edit_profile' %}" enctype="multipart/form-data">
+    <div class="second">
+      <div class="img-div">
+        <img class="logo" src="{% static 'img/logo one.jpeg' %}" alt="logo">
+      </div>
+      <h1 class="login-h">EDIT YOUR PROFILE</h1>
+      <p class="details">Pls enter your NEW details below</p>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Changes</button>
+  </form>
+</body>
+</html>

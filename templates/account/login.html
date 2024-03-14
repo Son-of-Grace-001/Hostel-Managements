@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+  
+  <form method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+      <div class="alert alert-danger">
+          {% for error in form.non_field_errors %}
+              <p class="ppp">{{ error }}</p>
+          {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="second">
+      <div class="img-div">
+        <img class="logo" src="{% static 'img/logo one.jpeg' %}" alt="logo">
+      </div>
+      <h1 class="login-h">LOGIN</h1>
+      <!-- <p class="details">Pls enter your details below</p> -->
+      {% csrf_token %}
+      {{ form.as_p}}
+      <input class="submit" type="submit" value="Login">
+      <p class="donot">Don't have an account yet, click <a href="{% url 'account_signup' %}">here</a></> to signup</p>
+    </div>
+  </form>
+</body>
+</html>
