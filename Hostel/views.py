@@ -321,6 +321,8 @@ def upload_school_fee_evidence(request):
     # if user already have an hostel allocated to them, they should be redirected to home page
     if request.user.hostel or request.user.block or request.user.room:
         return redirect('dashboard')
+    if user.has_paid_hostel_fee:
+        return redirect('book_room')
     context = {
         'matric_number': user.matric_number
     }
@@ -496,6 +498,8 @@ def hostel_fees(request):
     # if user already have an hostel allocated to them, they should be redirected to home page
     if user.hostel or user.block or user.room:
         return redirect('dashboard')
+    if user.has_paid_hostel_fee:
+        return redirect('book_room')
     hostel_amount = Amount.objects.latest('price')
     context = {
         'user_email': user.email,
