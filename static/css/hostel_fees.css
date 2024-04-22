@@ -39,9 +39,7 @@ label {
 }
 
 /* Styling for input fields */
-input[type="email"],
-input[type="tel"],
-input[type="text"] {
+input{
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
