@@ -18,8 +18,6 @@
         At Adeleke University Hostel, we prioritize the well-being and satisfaction of our residents. Our modern facilities are designed to foster a vibrant community atmosphere while providing essential amenities for a comfortable stay. From spacious and well-equipped rooms to communal areas for socializing and studying, we strive to create an inclusive and enriching living experience for all.
         Our dedicated staff members are committed to ensuring the safety and security of our residents, with 24/7 security surveillance and support services available. Whether you're embarking on your academic journey or looking for a place to call home during your university years, Adeleke University Hostel welcomes you with open arms.
         Join us at Adeleke University Hostel and become part of a vibrant community where friendships are formed, memories are made, and success is nurtured. Experience the essence of university life in an environment that fosters growth, learning, and personal development.
-        
-        
       </p>
     </div>
   </section>
@@ -103,6 +101,7 @@
       </p>
 
       <form method="POST">
+        {% csrf_token %}
         <div class="fname-grid">
           <div>
             <label class="namef" for="fname">First Name</label> <br>
