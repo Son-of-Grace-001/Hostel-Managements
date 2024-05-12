@@ -65,12 +65,16 @@ def custom_logout(request):
     return redirect('home')
 
 def signup_view(request):
+
     if request.method == 'POST':
         form = CustomSignupForm(request.POST, request.FILES)
         if form.is_valid():
             # The form is valid, continue with saving
             user = form.save(request)
-            # Additional logic after saving
+            
+            subject = "Welcome to Adeleke University Hostel"
+            message = f"Welcome to Adeleke University Hostel {request.user.first_name} {request.user.last_name}\n\n We are happy to have you. \n\n Warm Regards. \n\n Hostel Administrator"
+            send_mail (subject, message, settings.EMAIL_HOST_USER, [request.user.email] )
         else:
             # Print form errors for debugging
             print(form.errors)
