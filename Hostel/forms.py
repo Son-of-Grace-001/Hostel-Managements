@@ -8,8 +8,6 @@ from .models import Faculty, Department, Gender, CustomUser, Level
 from django.core.validators import FileExtensionValidator, ValidationError
 
 class CustomSignupForm(SignupForm):
-    username = forms.CharField(max_length=100, required=True)
-    email = forms.EmailField () 
     first_name = forms.CharField(max_length=100, required=True)
     last_name = forms.CharField(max_length=100, required=True)
     matric_number = forms.CharField(max_length=15, required=True)
@@ -33,7 +31,6 @@ class CustomSignupForm(SignupForm):
         # Your additional save logic
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
-        user.email = self.cleaned_data['email']
         user.matric_number = self.cleaned_data['matric_number']
         user.gender = self.cleaned_data['gender']
         user.faculty = self.cleaned_data['faculty']
