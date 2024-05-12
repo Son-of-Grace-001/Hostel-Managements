@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('secret_key')
+SECRET_KEY = 'django-insecure-ufso#@e8h^usacv^l&rsq4$1dp@e5m+^u20_na3qx-pj&%wuc*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -102,10 +102,6 @@ WSGI_APPLICATION = 'Project.wsgi.application'
 
 DATABASES = {
     "default": dj_database_url.parse(config("external_url")),
-    # 'OPTIONS': {
-    #         'sslmode': 'require',  # or 'verify-full' for stricter verification
-    #         'sslrootcert': '/path/to/your/certificate.crt',
-    #     }
 }
 
 
