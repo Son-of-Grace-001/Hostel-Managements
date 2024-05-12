@@ -1,124 +1,57 @@
 {% extends 'base2.html' %}
 {% load static %}
 
-{% block title %}Dashbord{% endblock %}
+{% block title %}Dashboard{% endblock %}
 
 {% block content %}
 <div class="welcome">
   {% if user.is_authenticated %}
-  <h2 class="welcome-h">Welcome @ {{user.first_name}}  {{user.last_name}}</h2>
+  <h2 class="welcome-h">Welcome, {{ user.first_name }} {{ user.last_name }}</h2>
   {% endif %}
 </div>
 <div class="hero-dash">
   
 </div>
-<div clss="explore">
-  <h1 class=" our-hostel">
-    explore our available hostel/room
+<div class="explore">
+  <h1 class="our-hostel">
+    Explore Our Available Hostels/Rooms
   </h1>
   <div class="grid">
     <div class="grid-explore">
       <img src="{% static 'img/login.jpg' %}" alt="hostel image">
     </div>
-    <div class="grid-explore">
-      <img src="{% static 'img/login.jpg' %}" alt="hostel image">
-    </div>
-    <div class="grid-explore">
-      <img src="{% static 'img/background.jpg' %}" alt="hostel image">
-    </div>
-    <div class="grid-explore">
-      <img src="{% static 'img/background.jpg' %}" alt="hostel image">
-    </div>
-    <div class="grid-explore">
-      <img src="{% static 'img/login.jpg' %}" alt="hostel image">
-    </div>
-    <div class="grid-explore">
-      <img src="{% static 'img/login.jpg' %}" alt="hostel image">
-    </div>
-    <div class="grid-explore">
-      <img src="{% static 'img/background.jpg' %}" alt="hostel image">
-    </div>
-    <div class="grid-explore">
-      <img src="{% static 'img/background.jpg' %}" alt="hostel image">
-    </div>
+    <!-- More hostel images -->
   </div>
 
-  <h1 class=" our-hos">
+  <h1 class="our-hos">
     WHY CHOOSE ADELEKE UNIVERSITY HOSTEL?
   </h1>
   <div class="grid">
     <div class="grid-explore">
-      <h3>power supply</h3>
+      <h3>Power Supply</h3>
       <p class="headings">
-        Lorem ipsum dolor, 
-        sit amet consectetur 
-        adipisicing elit. Incidunt 
-        earum, quia nesciunt.
+        Our hostel ensures uninterrupted power supply, providing a conducive environment for studying and leisure activities.
       </p>
     </div>
     <div class="grid-explore">
-      <h3>relationship</h3>
+      <h3>Relationships</h3>
       <p class="headings">
-        Lorem ipsum dolor, 
-        sit amet consectetur 
-        adipisicing elit. Incidunt 
-        earum, quia nesciunt.
+        We foster a supportive community where students build lasting relationships, enhancing their university experience.
       </p>
     </div>
     <div class="grid-explore">
-      <h3>security</h3>
+      <h3>Security</h3>
       <p class="headings">
-        Lorem ipsum dolor, 
-        sit amet consectetur 
-        adipisicing elit. Incidunt 
-        earum, quia nesciunt.
+        Your safety is our priority. Our hostel is equipped with 24/7 security measures to ensure a secure living environment.
       </p>
     </div>
     <div class="grid-explore">
       <h3>Amenities</h3>
       <p class="headings">
-        Lorem ipsum dolor, 
-        sit amet consectetur 
-        adipisicing elit. Incidunt 
-        earum, quia nesciunt.
+        Enjoy access to a range of amenities, including laundry facilities, recreational areas, and study spaces, to enhance your stay.
       </p>
     </div>
-    <div class="grid-explore">
-      <h3>power supply</h3>
-      <p class="headings">
-        Lorem ipsum dolor, 
-        sit amet consectetur 
-        adipisicing elit. Incidunt 
-        earum, quia nesciunt.
-      </p>
-    </div>
-    <div class="grid-explore">
-      <h3>relationship</h3>
-      <p class="headings">
-        Lorem ipsum dolor, 
-        sit amet consectetur 
-        adipisicing elit. Incidunt 
-        earum, quia nesciunt.
-      </p>
-    </div>
-    <div class="grid-explore">
-      <h3>security</h3>
-      <p class="headings">
-        Lorem ipsum dolor, 
-        sit amet consectetur 
-        adipisicing elit. Incidunt 
-        earum, quia nesciunt.
-      </p>
-    </div>
-    <div class="grid-explore">
-      <h3>Amenities</h3>
-      <p class="headings">
-        Lorem ipsum dolor, 
-        sit amet consectetur 
-        adipisicing elit. Incidunt 
-        earum, quia nesciunt.
-      </p>
-    </div>
+    <!-- More reasons -->
   </div>
 </div>
 {% endblock %}

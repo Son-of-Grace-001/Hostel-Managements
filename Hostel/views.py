@@ -65,22 +65,25 @@ def custom_logout(request):
     return redirect('home')
 
 def signup_view(request):
-
     if request.method == 'POST':
+        # If the request method is POST, process the form data
         form = CustomSignupForm(request.POST, request.FILES)
         if form.is_valid():
-            # The form is valid, continue with saving
+            # The form is valid, continue with saving the user data
             user = form.save(request)
             
+            # Compose and send a welcome email to the user
             subject = "Welcome to Adeleke University Hostel"
-            message = f"Welcome to Adeleke University Hostel {request.user.first_name} {request.user.last_name}\n\n We are happy to have you. \n\n Warm Regards. \n\n Hostel Administrator"
-            send_mail (subject, message, settings.EMAIL_HOST_USER, [request.user.email] )
+            message = f"Welcome to Adeleke University Hostel, {request.user.first_name} {request.user.last_name}!\n\nWe are happy to have you.\n\nWarm Regards,\nHostel Administrator"
+            send_mail(subject, message, settings.EMAIL_HOST_USER, [request.user.email])
         else:
-            # Print form errors for debugging
+            # The form is invalid, print form errors for debugging
             print(form.errors)
     else:
+        # If the request method is not POST (e.g., GET), initialize an empty sign-up form
         form = CustomSignupForm()
 
+    # Render the sign-up page with the form
     return render(request, 'account/signup.html', {'form': form})
 
  
