@@ -134,6 +134,20 @@ select{
   border: 1px solid #281470;
 }
 
+.confirm{
+  margin-top: 15px;
+}
+
+.btn-evidence{
+  width: 120px;
+  height: 40px;
+  background-color: #281470;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+}
+
 @media only screen and (max-width:600px){
   body{
     padding: 20px;
