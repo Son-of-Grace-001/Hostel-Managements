@@ -55,6 +55,7 @@ input, select{
   margin-bottom: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  color: #121212;
 }
 
 .logo{
@@ -157,5 +158,9 @@ select{
 
   li{
     margin-left: 20px;
+  }
+
+  input{
+    color: #121212;
   }
 }
