@@ -1,5 +1,4 @@
 {% load static %}
-<!-- templates/book_exeat.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,31 +14,30 @@
 
     <div class="img-div">
         <img class="logo" src="{% static 'img/logo one.jpeg' %}" alt="logo">
-      </div>
-      <h1 class="login-h">BOOK PASS</h1>
-      <p class="details">Pls fill in the informations correctly</p>
     </div>
-    <label for="departure_date">Faculty:</label>
-    <input class="date" type="date" name="faculty" value="{{faculty}}" readonly>
+    <h1 class="login-h">BOOK PASS</h1>
+    <p class="details">Please fill in the information correctly</p>
     
-    <label for="departure_date">Department:</label>
-    <input class="date" type="date" name="department" value="{{department}}" readonly>
+    <label for="faculty">Faculty:</label>
+    <input type="text" name="faculty" value="{{ faculty }}" readonly>
+    
+    <label for="department">Department:</label>
+    <input type="text" name="department" value="{{ department }}" readonly>
 
-    <label for="departure_date">Level:</label>
-    <input class="date" type="date" name="level" value="{{level}}" readonly>
+    <label for="level">Level:</label>
+    <input type="text" name="level" value="{{ level }}" readonly>
     
-    <label for="return_date">Parent Number:</label>
+    <label for="parent_number">Parent Number:</label>
     <input type="tel" name="parent_number" required placeholder="Enter your parent number">
     
-    <label for="departure_date">Student Number:</label>
-    <input class="date" type="date" name="student_number" value="{{student_num}}" readonly>
+    <label for="student_number">Student Number:</label>
+    <input type="text" name="student_number" value="{{ student_num }}" readonly>
     
     <label for="departure_date">Departure Date:</label>
-    <input class="date" type="date" name="departure_date" required>
+    <input type="date" name="departure_date" required>
     
     <label for="return_date">Return Date:</label>
-    <input type="date"  class="date" name="return_date" required>
-    
+    <input type="date" name="return_date" required>
     
     <label for="reason">Reason:</label>
     <textarea name="reason" required rows="6" col="15" placeholder="Enter the reason for booking pass"></textarea> <br>

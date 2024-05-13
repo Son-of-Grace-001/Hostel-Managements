@@ -163,12 +163,6 @@ def complaint(request):
 @login_required
 def book_pass(request):
     user = request.user
-    context = {
-        'faculty': user.faculty,
-        'department': user.department,
-        'level': user.level,
-        'student_num': user.phone_number
-    }
     
     if request.method == 'POST':
         departure_date = request.POST.get('departure_date')
@@ -218,6 +212,12 @@ def book_pass(request):
         messages.success(request, 'Exeat request submitted successfully.')
         return redirect('dashboard')
 
+    context = {
+        'faculty': user.faculty,
+        'department': user.department,
+        'level': user.level,
+        'student_num': user.phone_number
+    }
     return render(request, 'hostel/book_pass.html', context)
 
 
