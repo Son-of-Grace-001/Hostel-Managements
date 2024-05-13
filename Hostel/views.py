@@ -164,8 +164,8 @@ def complaint(request):
 def book_pass(request):
     user = request.user
     context = {
-        'fac': user.faculty,
-        'dep': user.department,
+        'faculty': user.faculty,
+        'department': user.department,
         'level': user.level,
         'student_num': user.phone_number
     }

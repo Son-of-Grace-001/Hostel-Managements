@@ -14,19 +14,19 @@
     <p>You are about to make payment for your hostel due pls confirm your details</p>
     <div class="form-group">
       <label for="email">Email Address</label>
-      <input type="email" id="email-address" required value="{{user_email}}" />
+      <input type="email" id="email-address" required value="{{user_email}}" readonly />
     </div>
     <div class="form-group">
       <label for="amount">Amount</label>
-      <input type="tel" id="amount" required value="{{hostel_due}}" disabled/>
+      <input type="tel" id="amount" required value="{{hostel_due}}" readonly/>
     </div>
     <div class="form-group">
       <label for="first-name">First Name</label>
-      <input type="text" id="first-name" value="{{user_first_name}}"/>
+      <input type="text" id="first-name" value="{{user_first_name}}" readonly/>
     </div>
     <div class="form-group">
       <label for="last-name">Last Name</label>
-      <input type="text" id="last-name" value="{{user_last_name}}" />
+      <input type="text" id="last-name" value="{{user_last_name}}" readonly/>
     </div>
     <div class="form-submit">
       <button type="submit" onclick="payWithPaystack('{{ hostel_due }}', event)">Pay</button>
