@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from allauth.account.views import SignupView
 from .forms import CustomSignupForm, EditProfileForm
-from .models import Department, CustomUser, Exeat, Upload, Amount, Complaint, Hostel, BedSpace, Payment
+from .models import Department, CustomUser, Exeat, Upload, Amount, Complaint, Hostel, BedSpace, Payment, Paid
 from django.contrib.auth import logout,login
 from django.shortcuts import redirect
 from django.core.mail import EmailMessage
@@ -505,59 +505,19 @@ def hostel_fees(request):
     # if user already have an hostel allocated to them, they should be redirected to home page
     if user.hostel or user.block or user.room:
         return redirect('dashboard')
-    if user.has_paid_hostel_fee:
-        return redirect('book_room')
-    hostel_amount = Amount.objects.latest('price')
+    email = user.email
+    fee = Paid.objects.filter(email=email).exists()
+    if fee:
+        return redirect ('book_room')
+    hostel_amount = Amount.objects.latest('price').price
     context = {
         'user_email': user.email,
         'user_first_name': user.first_name,
         'user_last_name': user.last_name,
         'hostel_due': hostel_amount,
     }
-    return render(request, 'hostel/hostel_fees.html', context)
-
-
-@csrf_exempt
-def paystack_webhook(request):
     if request.method == 'POST':
-        # Verify the webhook signature
-        signature = request.headers.get('X-Paystack-Signature')
-        if not signature:
-            return HttpResponseBadRequest('Missing Paystack signature header')
-
-        expected_signature = hmac.new(
-            key=PAYSTACK_WEBHOOK_SECRET.encode('utf-8'),
-            msg=request.body,
-            digestmod=hashlib.sha512
-        ).hexdigest()
-
-        if signature != expected_signature:
-            return HttpResponseBadRequest('Invalid Paystack signature')
-
-        # Parse the JSON data from the request body
-        try:
-            data = json.loads(request.body)
-        except json.JSONDecodeError:
-            return HttpResponseBadRequest('Invalid JSON payload')
-
-        # Extract relevant data from the webhook notification
-        transaction_id = data.get('data', {}).get('id')
-        amount_paid = data.get('data', {}).get('amount')
-        email = data.get('data', {}).get('customer', {}).get('email')
-
-        # Lookup the user based on the email address
-        user = CustomUser.objects.filter(email=email).first()
-
-        if not user:
-            return HttpResponseBadRequest('User not found')
-
-        # Update the user's has_paid_hostel_fee field
-        user.has_paid_hostel_fee = True
-        user.save()
-
-        # Respond with a success message
-        return JsonResponse({'message': 'Webhook processed successfully'}, status=200)
-
-    else:
-        # Respond with an error for unsupported HTTP methods
-        return HttpResponseBadRequest('Unsupported HTTP method')
+        email = request.get.POST('email')
+        paid = Paid.objects.create(email=email)
+        paid.save()
+    return render(request, 'hostel/hostel_fees.html', context)

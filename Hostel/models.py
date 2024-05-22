@@ -170,3 +170,11 @@ class Payment(models.Model):
 
     def __str__(self):
         return self.matric_number
+
+
+class Paid(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.email
