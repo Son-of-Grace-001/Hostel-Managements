@@ -1,6 +1,5 @@
 {% load static %}
 
-<!-- templates/book_exeat.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,20 +9,21 @@
     <link rel="stylesheet" href="{% static 'css/signup.css' %}">
 </head>
 <body>
-  <form method="post"  action="{%  url 'payment' %}">
+  <form method="post" action="{% url 'verify_payment' %}">
     {% csrf_token %}
-    {% for message in messages%}
-    <p class="error-pp">{message.error}</p>
-    {% endfor %}
+    {% if messages %}
+      {% for message in messages %}
+        <p class="error-pp">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
     <h1 class="confirm">Provide Matric Number</h1>
     <p class="pp">
       Your Matric number is required to verify if you have paid your school fees
     </p>
 
-    <label for="evidence">Matric Number:</label> <br>
-    <input type="text" name="matric_number" id="evidence" placeholder="Enter your matric number" required>
-    <button class="btn-evidence">Submit</button>
+    <label for="matric_number">Matric Number:</label><br>
+    <input type="text" name="matric_number" id="matric_number" placeholder="Enter your matric number" required>
+    <button class="btn-evidence" type="submit">Submit</button>
   </form>
-</body>
 </body>
 </html>
