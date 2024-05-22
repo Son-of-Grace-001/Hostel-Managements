@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/signup.css' %}">
 </head>
 <body>
-  <form method="post">
+  <form method="post" action="{%  url 'payment' %}">
     {% csrf_token %}
     {% if messages %}
       {% for message in messages %}
