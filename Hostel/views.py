@@ -505,10 +505,10 @@ def hostel_fees(request):
     # if user already have an hostel allocated to them, they should be redirected to home page
     if user.hostel or user.block or user.room:
         return redirect('dashboard')
-    email = user.email
-    fee = Paid.objects.filter(email=email).exists()
-    if fee:
-        return redirect ('book_room')
+    # email = user.email
+    # fee = Paid.objects.filter(email=email).exists()
+    # if fee:
+    #     return redirect ('book_room')
     hostel_amount = Amount.objects.latest('price').price
     context = {
         'user_email': user.email,
