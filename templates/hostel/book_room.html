@@ -12,9 +12,12 @@
 <body>
   <form method="post"  action="{%  url 'payment' %}">
     {% csrf_token %}
+    {% for message in messages%}
+    <p class="error-pp">{message.error}</p>
+    {% endfor %}
     <h1 class="confirm">Provide Matric Number</h1>
     <p class="pp">
-      Your Matric number is required to proceed to the next step to booking room
+      Your Matric number is required to verify if you have paid your school fees
     </p>
 
     <label for="evidence">Matric Number:</label> <br>

@@ -11,6 +11,10 @@ body{
   padding-bottom: 50px;
 }
 
+.error-pp{
+  color: red;
+}
+
 form{
   width:50%;
   margin: auto;
